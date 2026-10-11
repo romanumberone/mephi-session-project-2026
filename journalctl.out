@@ -1,0 +1,35 @@
+окт 10 18:40:46 mephi-2026.domain.local systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+окт 10 18:40:46 mephi-2026.domain.local nginx[33583]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+окт 10 18:40:46 mephi-2026.domain.local nginx[33583]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+окт 10 18:40:47 mephi-2026.domain.local systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+окт 11 09:27:08 mephi-2026.domain.local systemd[1]: Stopping nginx.service - The nginx HTTP and reverse proxy server...
+окт 11 09:27:08 mephi-2026.domain.local systemd[1]: nginx.service: Deactivated successfully.
+окт 11 09:27:08 mephi-2026.domain.local systemd[1]: Stopped nginx.service - The nginx HTTP and reverse proxy server.
+окт 11 09:27:08 mephi-2026.domain.local systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+окт 11 09:27:08 mephi-2026.domain.local nginx[35188]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+окт 11 09:27:08 mephi-2026.domain.local nginx[35188]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+окт 11 09:27:08 mephi-2026.domain.local systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+окт 11 09:31:54 mephi-2026.domain.local systemd[1]: Stopping nginx.service - The nginx HTTP and reverse proxy server...
+окт 11 09:31:54 mephi-2026.domain.local systemd[1]: nginx.service: Deactivated successfully.
+окт 11 09:31:54 mephi-2026.domain.local systemd[1]: Stopped nginx.service - The nginx HTTP and reverse proxy server.
+окт 11 09:31:54 mephi-2026.domain.local systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+окт 11 09:31:54 mephi-2026.domain.local nginx[35208]: nginx: [warn] conflicting server name "_" on 0.0.0.0:80, ignored
+окт 11 09:31:54 mephi-2026.domain.local nginx[35208]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+окт 11 09:31:54 mephi-2026.domain.local nginx[35208]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+окт 11 09:31:54 mephi-2026.domain.local nginx[35209]: nginx: [warn] conflicting server name "_" on 0.0.0.0:80, ignored
+окт 11 09:31:54 mephi-2026.domain.local systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.
+окт 11 11:42:59 mephi-2026.domain.local systemd[1]: Stopping nginx.service - The nginx HTTP and reverse proxy server...
+окт 11 11:43:00 mephi-2026.domain.local systemd[1]: nginx.service: Deactivated successfully.
+окт 11 11:43:00 mephi-2026.domain.local systemd[1]: Stopped nginx.service - The nginx HTTP and reverse proxy server.
+окт 11 11:43:00 mephi-2026.domain.local systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+окт 11 11:43:00 mephi-2026.domain.local nginx[35458]: nginx: [emerg] unknown directive "worker_process" in /etc/nginx/nginx.conf:1
+окт 11 11:43:00 mephi-2026.domain.local nginx[35458]: nginx: configuration file /etc/nginx/nginx.conf test failed
+окт 11 11:43:00 mephi-2026.domain.local systemd[1]: nginx.service: Control process exited, code=exited, status=1/FAILURE
+окт 11 11:43:00 mephi-2026.domain.local systemd[1]: nginx.service: Failed with result 'exit-code'.
+окт 11 11:43:00 mephi-2026.domain.local systemd[1]: Failed to start nginx.service - The nginx HTTP and reverse proxy server.
+окт 11 11:59:30 mephi-2026.domain.local systemd[1]: Starting nginx.service - The nginx HTTP and reverse proxy server...
+окт 11 11:59:31 mephi-2026.domain.local nginx[35487]: nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+окт 11 11:59:31 mephi-2026.domain.local nginx[35487]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+окт 11 11:59:31 mephi-2026.domain.local nginx[35487]: nginx: configuration file /etc/nginx/nginx.conf test is successful
+окт 11 11:59:31 mephi-2026.domain.local nginx[35488]: nginx: [warn] could not build optimal types_hash, you should increase either types_hash_max_size: 1024 or types_hash_bucket_size: 64; ignoring types_hash_bucket_size
+окт 11 11:59:31 mephi-2026.domain.local systemd[1]: Started nginx.service - The nginx HTTP and reverse proxy server.

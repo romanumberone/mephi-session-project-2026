@@ -1,0 +1,202 @@
+    1  ip a
+    2  hostname
+    3  lsblk
+    4  getenforce
+    5  nmcli con mod "System eth0" ipv4.method auto
+    6  ip a
+    7  nmcli con show
+    8  nmcli con mod "enp0s3" ipv4.method auto
+    9  nmcli con up "enp0s3"
+   10  hostnamectl set-hostname mephi-2026.domain.local
+   11  hostname
+   12  ping -c 4 8.8.8.8 > ping.out
+   13  cat ping.out
+   14  dnf update -y
+   15  dnf install -y nginx libcap-ng-utils
+   16  dnf download tcpdump --destdir=/tmp
+   17  rpm -ivh /tmp/tcpdump-*.rpm
+   18  rpm -ivh *.rpm
+   19  cd /tmp
+   20  rpm -ivh *.rpm
+   21  rpm -qpR /tmp/tcpdump-*.rpm
+   22  rpm -ivh /tmp/tcpdump-*.rpm
+   23  dnf history > dnf.out
+   24  pwd
+   25  cd -
+   26  lsblk
+   27  fdisk /dev/sdb
+   28  mkfs.ext4 -L MEPHI_WEB /dev/sdb1
+   29  mkdir -p /maphi-web
+   30  echo 'LABEL=MEPHI_WEB /mephi-web ext4 defaults 0 2' | tee -a /etc/fstab
+   31  systemctl daimon-reload
+   32  systemctl daemon-reload
+   33  mount -a
+   34  ls -ld /mephi-web
+   35  ls
+   36  pwd
+   37  mkdir -p /mephi-web
+   38  echo 'LABEL=MEPHI_WEB /mephi-web ext4 defaults 0 2' | tee -a /etc/fstab
+   39  mount -a
+   40  rm -rf /maphi-web
+   41  df -h /mephi-web
+   42  systemctl enable --now nginx
+   43  systemctl status nginx
+   44  journalctl -u nginx -b > journalctl.out
+   45  mkdit -p /data/mephi-2026
+   46  groupadd -g 4444 curators
+   47  useradd -u 5501 - m user1
+   48  useradd -u 5502 - m user2
+   49  useradd -u 5503 - m user3
+   50  useradd -m -g curators curator1
+   51  useradd -m -g curators curator2
+   52  groupadd developers
+   53  usermod -aG developers user1
+   54  id user1
+   55  useradd -u 5501 -m user1
+   56  useradd -u 5502 -m user2
+   57  useradd -u 5503 -m user3
+   58  usermod -aG developers user1
+   59  usermod -aG developers user2
+   60  usermod -aG developers user3
+   61  chgrp developers /data/mephi-2026
+   62  mkdir -p /data/mephi-2026
+   63  ls -ld /data/mephi-2026
+   64  chgrp developers /data/mephi-2026
+   65  chmod 2770 /data/mephi-2026
+   66  setfacl -R -m g:curators:rX /data/mephi-2026
+   67  setfacl -R -d -m g:curators:rX /data/mephi-2026
+   68  getfacl /data/mephi-2026
+   69  stat /data/mephi-2026 > stat.out
+   70  chmod u-s /usr/sbin/tcpdump
+   71  which tcpdump
+   72  chmod u-s /usr/bin/tcpdump
+   73  rpm -q tcpdump
+   74  dnf install -y tcpdump
+   75  rpm -q tcpdump
+   76  which tcpdump
+   77  chmod u-s /usr/sbin/tcpdump
+   78   setcap cap_net_raw,cap_net_admin=eip
+   79   setcap cap_net_raw,cap_net_admin=eip /usr/sbin/tcpdump
+   80  getcap /usr/sbin/tcpdump
+   81  getcap /usr/sbin/tcpdump > getcap.out
+   82  -u user1 tcpdump -c 4 -w /dew/null & sleep i; kill %1 2>/dev/null
+   83  sudo -u user1 tcpdump -c 4 -w /dew/null & sleep i; kill %1 2>/dev/null
+   84  sudo -u user1 /usr/sbin/tcpdump -c 4 -w /dew/null & PId=$!
+   85  ls -l /usr/sbin/tcpdump
+   86  file /usr/sbin/tcpdump
+   87  sudo -u user1 /usr/sbin/tcpdump -h
+   88  ls -l /dev/null
+   89  sudo -u user1 tcpdump
+   90  ?ch
+   91  chmod u+s /usr/sbin/tcpdump
+   92  sudo -u user1 tcpdump -c 4 -w /dev/null
+   93  ls -l /usr/sbin/tcpdump
+   94  getcap /usr/sbin/tcpdump
+   95  sudo -u user1 tcpdump -c 4 -w /dev/null & sleep1; sudo kill %1 2>/dev/null
+   96  sudo -u user1 tcpdump -c 4 -w /dev/null & sleep 1; sudo kill %1 2>/dev/null
+   97  getenforce
+   98  getenforce > getenforce.out
+   99  semanage fcontext -a -t httpd_sys_content_t "/mephi-web(/.*)?"
+  100  restorecon -Rv /mephi-web
+  101  semanage fcontext -a -t httpd_sys_content_t "/mephi-web/index.html"
+  102  restorecon -v /mephi-web/index.html
+  103  usermod -s /sbin/nologin curator1
+  104  usermod -s /sbin/nologin curator2
+  105  sed -i 's/^PASS_MAX_DAYS.*/PASS_MAX_DAYS   90/' /etc/login.defs
+  106  sed -i 's/^#\? *minlen.*/minlen = 12/' /etc/security/pwquality.conf
+  107  for u in user1 user2 user3 curator1 curator2; do sudo chage -M 90 "$u"; done
+  108  grep PASS_MAX_DAYS /etc/login.defs
+  109  grep minlen /etc/security/pwquality.conf
+  110  echo 'Hello from Student: M265983
+' tee /mephi-web/index.thml
+  111  systemctl restart nginx
+  112  curl http://localhost/ > curl.out
+  113  cat curl.out
+  114* curl http://localhost/ curl -s 
+  115  tee /etc/nginx/conf.d/mephi.conf > /dev/null <<'EQF'
+server {
+listen 80 default_server;
+server_name _;
+root /mephi-web;
+index index.html;
+}
+EQF
+
+  116  systemctl restart nginx
+  117  curl http://localhost/ 
+  118  curl -s http://localhost/
+  119  curl -s -o http://localhost/
+  120   ls -Z /mephi-web/
+  121  semanage fcontext -a -t htttpd_syscontent_t "mehpi-web(/.*)?"
+  122  semanage fcontext -a -t httpd_syscontent_t "mehpi-web(/.*)?"
+  123  semanage fcontext -a -t httpd_sys_content_t "mehpi-web(/.*)?"
+  124  restorecon -Rv /mephi-web
+  125   ls -Z /mephi-web/
+  126  grep "denied" /var/log/audit.log | grep mephi
+  127  semanage fcontext -l | grep mephi-web
+  128  ls -Z /mephi-web/index.html
+  129  ls -ld /mephi-web
+  130  ls -l /mephi-web/index.html
+  131  sudo chmo /mephi-web/index.html 
+  132  sudo chmod 644 /mephi-web/index.html 
+  133  mkdir -p /mephi-web echo 'Hello from Student: M265983' | sudo tee /mephi-web/index.html
+  134  ls -l /mephi-web/
+  135  chmod 755 /mephi-web
+  136  chmod 644 /mephi-web/index.html
+  137* 
+  138  ls -Z /mephi-web/index.html
+  139  semanage fcontext -a -t httpd_sys_content_t "mehpi-web(/.*)?"
+  140  restorecon -Rv /mephi-web
+  141  ls -Z /mephi-web/index.html
+  142  curl -s -w "Status: %{thhp_code}\n" http://localhost/
+  143* 
+  144  ls -l /mephi-web/ | less
+  145  curl -s -w "Status: %{thhp_code}\n" http://localhost/ | less
+  146  ls /etc/nginx/cong.d/
+  147  ls /etc/nginx/conf.d/
+  148  cat /etc/nginx/conf.d/mephi.conf
+  149  nginx -T | grep -B2 -A15 "server {"
+  150  nginx -T | grep -B2 -A15 "server {" | less
+  151  nginx -t 
+  152  grep -rn "server_name _\|defaullt_server" /etc/nginx/
+  153  cat /etc/nginx/conf.d/mephi.conf
+  154  grep -n "inclcude" /etc/nginx/nginx.conf
+  155  ls -l /etc/nginx/conf.d
+  156  cp /etc/nginx/nginx.conf /etc/nginx/nginx/conf.bak
+  157  tee /etc/nginx/nginx.conf > /dev/null <<'EOF'
+worker_process auto;
+error_log /var/log_nginx/error.log;
+pid /run/nginx.pid;
+
+events {
+  worker_connections 1024;
+}
+
+http {
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    access_log /var/log/nginx/access.log;
+    sendfile    on;
+    keepalive_timeout 65;
+
+    include /etc/nginx/conf.d/*.conf;
+}
+EOF
+
+  158  nginx -t
+  159  systemctl restart nginx
+  160  sustemctl status nginsx -l
+  161  sustemctl status nginx -l
+  162  systemctl status nginx -l
+  163  systemctl status nginx-1
+  164  nano /etc/nginx/nginx.conf
+  165  nginx -t
+  166  systemctl restart nginx
+  167  systemctl status nginx
+  168  curl http://localhost/
+  169  curl -v http://localhost/ 2>&1
+  170  cat /mephi-web/index.html
+  171  echo 'Hello from Student: M265983' | sudo tee /mephi-web/index.html
+  172  curl http://localhost/ > curl.out
+  173  cat curl.out
+  174  history > ~/history.out
