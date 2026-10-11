@@ -200,3 +200,47 @@ EOF
   172  curl http://localhost/ > curl.out
   173  cat curl.out
   174  history > ~/history.out
+  175  ping -c 4 8.8.8.8 > ~/ping.out
+  176  stat /data/mephi-2026 > ~/stat.out
+  177  getcap /usr/sbin/tcpdump > ~/getcap.out
+  178  dnf history > ~/dnf.out
+  179  journalctl -u nginx -b > ~/journalctl.out
+  180  getenforce > ~/getenforce.out
+  181  stat /mephi-web >> ~/stat.out
+  182  curl http://localhost/ > ~/curl.out
+  183  git init
+  184  git --version
+  185  dnf install git
+  186  git --version
+  187  git init
+  188  git remote add origin https://github.com/romanumberone/me[hi-session-project-2026.git
+  189  cp /etc/fstab /etc/passwd /etc/shadow etc/group etc/security/pwquality.conf .
+  190* ls -l /etc/security
+  191  ls -l etc/security/pwquality.conf
+  192  find /etc -name "pwquality*" 2>/dev/null
+  193  ls -l /etc/xecurity/ | grep -i passwd
+  194  cp /etc/group .
+  195  echo 'minlen = 12' > /etc/security/pwquality.conf
+  196  cp /etc/security/pwquality.conf
+  197  cp /etc/security/pwquality.conf .
+  198  ls -l /root/
+  199  rm -f /root/echo
+  200  rm -f "/root/Hello from Student: M265983"
+  201  git remote add origin https://github.com/romanumberone/mephi-session-project-2026.git
+  202  rm -rf /root/echo
+  203  rm -rf "/root/Hello from Student: M265983"
+  204  ls -l /root/
+  205  git remote set-url origin https://github.com/romanumberone/mephi-session-project-2026.git
+  206  git remote -v
+  207  cd /root
+  208  git add .
+  209  git status
+  210  git commit -m "V1"
+  211  git branch -M main
+  212  git push -u origin main
+  213  curl http:localhost/
+  214  curl http://localhost/
+  215  cd /root
+  216  curl http://localhost/ > curl.out
+  217  journalctl -u nginx -b > journalctl.out
+  218  history > history.out
